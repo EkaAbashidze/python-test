@@ -30,8 +30,11 @@ def main():
             monthConverted = monthConverted[0]
             if monthConverted.lower() == month.lower():
                 monthFormatted = f"{months.index(monthConverted) + 1:02}"
-            orderedDate = [date[1], monthFormatted, day]
-            date = "-".join(orderedDate)
-            print(date)
+            try:
+                orderedDate = [date[1], monthFormatted, day]
+                date = "-".join(orderedDate)
+                print(date)
+            except UnboundLocalError:
+                pass
 
 main()
