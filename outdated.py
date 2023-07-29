@@ -19,19 +19,19 @@ def main():
     if '/' in date:
         date = date.split("/")
         orderedDate = [date[2], f"{int(date[0]):02}", f"{int(date[1]):02}"]
-        date = "/".join(orderedDate)
-
+        date = "-".join(orderedDate)
+        print(date)
+        
     for month in months:
         if month in date:
             date = date.split(", ")
             monthConverted = date[0].split(" ")
             day = monthConverted[1]
             monthConverted = monthConverted[0]
-            if monthConverted == month:
+            if monthConverted.lower() == month.lower():
                 monthFormatted = f"{months.index(monthConverted) + 1:02}"
             orderedDate = [date[1], monthFormatted, day]
-            date = "/".join(orderedDate)
-
-    print(date)
+            date = "-".join(orderedDate)
+            print(date)
 
 main()
