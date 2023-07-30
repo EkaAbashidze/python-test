@@ -1,5 +1,7 @@
 from hello import hello
 
-def test_hello():
-    assert hello("Bitcamp") == "hello, Bitcamp"
+def test_default():
     assert hello() == "hello, world"
+
+def test_argument():
+    assert hello("Bitcamp") == "hello, Bitcamp"
