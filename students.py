@@ -1,10 +1,8 @@
 import csv
 
-students = []
-with open("hogwarts.csv") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        students.append({"name": row["name"], "house": row["house"]})
+name = input("What's your name? ")
+house = input("Where's your house? ")
 
-for student in sorted(students, key=lambda student: student["name"]):
-    print(f"{student['name']} is in {student['house']}")
+with open("hogwarts.csv", "a") as file:
+    writer = csv.DictWriter(file, fieldnames=["name", "house"])
+    writer.writerow({"name": name, "house": house})
