@@ -15,7 +15,7 @@ def get_level():
 
 def generate_integer(level):
     user_score = 0
-    for i in range(1, 11):
+    for _ in range(10):
         if level == 1:
             X = random.choice(range(0, 9))
             Y = random.choice(range(0, 9))
@@ -27,12 +27,16 @@ def generate_integer(level):
             Y = random.choice(range(100, 999))
         calculation = f'{X} + {Y} ='
         answer = X + Y
-        user_answer = int(input(f'{calculation} '))
-        if user_answer != answer:
-            print("EEE")
+        for _ in range(3):
+            user_answer = int(input(f'{calculation} '))
+            if user_answer != answer:
+                print("EEE")
+            else:
+                user_score += 1
+                break
         else:
-            user_score = user_score + 1
-            continue
+            print(f'Correct answer: {answer}')
+        
     print(f'Your score: {user_score}')
 
 if __name__ == "__main__":
