@@ -16,15 +16,10 @@ def get_level():
 def generate_integer(level):
     user_score = 0
     for _ in range(10):
-        if level == 1:
-            X = random.choice(range(0, 9))
-            Y = random.choice(range(0, 9))
-        elif level == 2:
-            X = random.choice(range(10, 99))
-            Y = random.choice(range(10, 99))
-        elif level == 3:
-            X = random.choice(range(100, 999))
-            Y = random.choice(range(100, 999))
+        lower_bound = 10 ** (level - 1)
+        upper_bound = (10 ** level) - 1
+        X = random.choice(range(lower_bound, upper_bound))
+        Y = random.choice(range(lower_bound, upper_bound))
         calculation = f'{X} + {Y} ='
         answer = X + Y
         for _ in range(3):
