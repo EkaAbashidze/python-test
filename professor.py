@@ -1,6 +1,5 @@
 import random
 
-
 def main():
     num = get_level()
     generate_integer(num)
