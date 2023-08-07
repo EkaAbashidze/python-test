@@ -5,18 +5,19 @@ def main():
     else:
         print("Invalid")
 
-def is_valid(s):
+def is_valid(str):
     nums = ""
     not_allowed = ',.!? :;"\')('
-    for c in s:
+    for c in str:
         if c in not_allowed:
             return False
         if c.isdigit():
             nums += c
-    if len(s) >= 6 and int(nums[0]) != 0 and (s[0:2]).isalpha() and s[-1].isdigit(): 
+    if len(str) >= 6 and int(nums[0]) != 0 and (str[0:2]).isalpha() and str[-1].isdigit(): 
         return True
     else:
         return False
-    return s
+    return str
 
-main()
+if __name__ == "__main__":
+    main()
