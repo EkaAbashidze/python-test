@@ -1,11 +1,12 @@
 def main():
     str = input("Input: ")
-    shorten(str)
+    word = shorten(str)
+    print(f"Output: {word.lower()}")
 
 def shorten(word):
     vowels = 'aeiou'
     new_word = ''.join(char for char in word if char.lower() not in vowels)
-    print(f"Output: {new_word}")
+    return new_word
     
 
 if __name__ == "__main__":
