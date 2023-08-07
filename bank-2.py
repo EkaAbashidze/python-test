@@ -1,14 +1,15 @@
 def main():
     greet = input("Greeting: ")
-    greeting(greet)
+    val = value(greet)
+    print(f"${val}")
     
-def greeting(text):
-    text = text.lower().strip()
-    if text.startswith("hello"):
-        print("$0")
-    elif text.startswith("h"):
-        print("$20")
+def value(greeting):
+    greeting = greeting.lower().strip()
+    if greeting.startswith("hello"):
+        return 0
+    elif greeting.startswith("h"):
+        return 20
     else:
-        print("$100")
+        return 100
 
 main()
